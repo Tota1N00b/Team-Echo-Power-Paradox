@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 280.0, 229.0, 913.0, 740.0 ],
+		"rect" : [ 236.0, 186.0, 913.0, 740.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,31 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 772.0, 644.0, 61.0, 22.0 ],
+					"text" : "route /dist"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-13",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 682.0, 636.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-140",
 					"maxclass" : "newobj",
@@ -309,9 +334,8 @@
 				"box" : 				{
 					"id" : "obj-124",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "signal" ],
+					"numinlets" : 0,
+					"numoutlets" : 0,
 					"patching_rect" : [ 659.0, 701.0, 60.0, 22.0 ],
 					"text" : "freeverb~"
 				}
@@ -410,7 +434,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1450.0, 485.0, 54.687960328125001, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Stereo spread"
 				}
 
@@ -423,7 +446,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1392.0, 471.0, 58.539479007812531, 47.0 ],
-					"presentation_linecount" : 3,
 					"text" : "Grain pitch variation"
 				}
 
@@ -436,7 +458,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1334.0, 471.0, 60.0, 47.0 ],
-					"presentation_linecount" : 3,
 					"text" : "Grain pitch factor"
 				}
 
@@ -449,7 +470,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1270.0, 485.0, 66.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Grain size variation"
 				}
 
@@ -462,7 +482,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1219.0, 485.0, 45.687960328125001, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Grain size"
 				}
 
@@ -475,7 +494,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1152.0, 485.0, 67.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Grain rate variation"
 				}
 
@@ -488,7 +506,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1092.0, 485.0, 67.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Grain separation"
 				}
 
@@ -974,7 +991,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 573.0, 223.0, 184.0, 78.0 ],
+					"patching_rect" : [ 573.0, 223.0, 186.0, 78.0 ],
 					"text" : "be sure to install percolate from the package manager to run properly!!!"
 				}
 
@@ -1189,7 +1206,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 612.0, 123.0, 50.0, 35.0 ],
-					"text" : "scale 0 7 19"
+					"text" : "scale 0 7"
 				}
 
 			}
@@ -1330,7 +1347,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 176.0, 206.0, 1022.0, 480.0 ],
+						"rect" : [ 765.0, 112.0, 1022.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7328,6 +7345,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-127", 0 ],
+					"order" : 0,
+					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"order" : 1,
+					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-55", 0 ],
 					"source" : [ "obj-22", 0 ]
 				}
@@ -7342,7 +7375,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"order" : 0,
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
+					"order" : 1,
 					"source" : [ "obj-25", 0 ]
 				}
 
@@ -7832,13 +7874,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "beautyStep.aif",
-				"bootpath" : "~/Documents",
-				"patcherrelativepath" : "../..",
-				"type" : "AIFF",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "freeverb.gendsp",
 				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Examples/gen",
 				"patcherrelativepath" : "../../../Library/Application Support/Cycling '74/Max 8/Examples/gen",
@@ -7860,19 +7895,8 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "freeverb~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "munger~.mxo",
 				"type" : "iLaX"
-			}
-, 			{
-				"name" : "typingMunger.aif",
-				"bootpath" : "~/Documents",
-				"patcherrelativepath" : "../..",
-				"type" : "AIFF",
-				"implicit" : 1
 			}
  ],
 		"autosave" : 0
